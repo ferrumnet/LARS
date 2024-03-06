@@ -13,7 +13,7 @@ class BalanceManagementService {
     async addLiquidity(amount) {
 
       const walletBalance = await this.tokenContract.balanceOf(this.wallet.address);
-      const formattedWalletBalance = parseFloat(ethers.utils.parseUnits(walletBalance, this.tokenDecimals)).toFixed(3);
+      const formattedWalletBalance = parseFloat(ethers.utils.formatUnits(walletBalance, this.tokenDecimals)).toFixed(3);
       console.log(`Liquidity Manager Wallet Balance: ${this.tokenSymbol} ${formattedWalletBalance}`);
 
       const walletBalanceBN = ethers.BigNumber.from(walletBalance);
