@@ -6,13 +6,14 @@ const fundManagerABI = require('../contract-abi/FundManager.json').abi;
 
 async function initialize() {
   try {
-    const tokenAddress = process.env.BSC_TOKEN_ADDRESS;  // ARBI_TOKEN_ADDRESS
-    const fundManagerAddress = process.env.BSC_FUND_MANAGER; // ARBI_FUND_MANAGER
+    const tokenAddress = process.env.TOKEN_ADDRESS_ARBITRUM;  // ARBI_TOKEN_ADDRESS
+    const fundManagerAddress = process.env.FUND_MANAGER; // ARBI_FUND_MANAGER
     
     const privKey = process.env.PRIVATE_KEY0;
+    const ethRPC = 'https://bsc.meowrpc.com';
     const bscRPC = 'https://bsc.meowrpc.com';
     const arbiRPC = 'https://nd-829-997-700.p2pify.com/790712c620e64556719c7c9f19ef56e3';
-    const provider = new ethers.providers.JsonRpcProvider(bscRPC);
+    const provider = new ethers.providers.JsonRpcProvider(arbiRPC);
 
     const wallet = new ethers.Wallet(privKey, provider);
     const tokenContract = new ethers.Contract(tokenAddress, ERC20ABI, wallet);
