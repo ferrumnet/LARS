@@ -35,7 +35,7 @@ class BalanceMonitoringService {
 
           } else if (liquidityBN.lt(this.lowThreshold)) {
 
-                const liquidityShortfall = this.lowThreshold.sub(liquidityBN);
+                const liquidityShortfall = this.highThreshold.sub(liquidityBN);
                 console.log(`${this.tokenSymbol} Token balance falls below low threshold (${LowThreshold}) by ${parseFloat(ethers.utils.formatUnits(liquidityShortfall, this.tokenDecimals)).toFixed(3)}. Liquidity replenishment needed.\n`);
                 await this.balanceManagementService.addLiquidity(liquidityShortfall);
                 
