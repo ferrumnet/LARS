@@ -14,12 +14,12 @@ async function main() {
   } = await initialize();
 
   // Configure LARS parameters 
-  const lowThreshold = ethers.utils.parseUnits('480', tokenDecimals);
+  const lowThreshold = ethers.utils.parseUnits('500', tokenDecimals);
   const formattedLowThreshold = ethers.utils.formatUnits(lowThreshold, tokenDecimals);
   console.log(`Low Threshold: ${formattedLowThreshold}`);
 
 
-  const highThreshold = ethers.utils.parseUnits('500', tokenDecimals);
+  const highThreshold = ethers.utils.parseUnits('1000', tokenDecimals);
   const formattedHighThreshold = ethers.utils.formatUnits(highThreshold, tokenDecimals);
   console.log(`High Threshold: ${formattedHighThreshold}`);
 
@@ -36,7 +36,7 @@ async function main() {
   );
 
   // Start balance monitoring service with a 60-second interval
-  balanceMonitoringService.startMonitoring(30);
+  balanceMonitoringService.startMonitoring(180);
 
   // To stop monitoring after a specific time or condition:
   // setTimeout(() => balanceMonitoringService.stopMonitoring(), 3600000); // Stop after 1 hour
