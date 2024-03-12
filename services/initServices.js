@@ -31,6 +31,11 @@ async function initialize() {
     const tokenAddress = networks[network].tokenAddress;
     const rpcURL = networks[network].rpcURL;
 
+    // Logging the selected network, token address, and RPC URL
+    console.log(`Running on the ${network} network`);
+    console.log(`Token Address: ${tokenAddress}`);
+    console.log(`RPC URL: ${rpcURL}`);
+
     const provider = new ethers.providers.JsonRpcProvider(rpcURL);
 
     const privKey = process.env.PRIVATE_KEY0;
