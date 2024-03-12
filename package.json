@@ -1,0 +1,14 @@
+{
+    "name": "Liquidity Automated Replenishment Service (LARS)",
+    "version": "1.0.0",
+    "description": "Liquidity Automated Replenishment Service (LARS)",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "dependencies": {
+      "ethers": "^5.0.0",
+      "dotenv": "^10.0.0"
+    }
+  }
+  
