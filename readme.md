@@ -75,5 +75,10 @@ PRIVATE_KEY0=0xYourPrivateKey
 Run the application using:
 
 ```bash
-node main.js
+npm start <network> <lowThreshold> <highThreshold> <interval>
+```
+
+### Example:
+```bash
+npm start ethereum 500 1000 180
 ```
