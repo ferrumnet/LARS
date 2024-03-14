@@ -22,8 +22,8 @@ class BalanceManagementService {
             console.log(`Adding liquidity: ${parseFloat(ethers.utils.formatUnits(amount, this.tokenDecimals)).toFixed(3)} ${this.tokenSymbol} tokens`);
             const approvalTx = await this.tokenContract.connect(this.wallet).approve(this.fundManager.address, amount);
             await approvalTx.wait();
-            
-            await this.tokenContract.connect(this.wallet).transfer(this.fundManager.address, amount);
+
+            await this.fundManager.connect(this.wallet).addLiquidityByManager(this.tokenContract.address, amount);
             console.log(`Liquidity Added: ${parseFloat(ethers.utils.formatUnits(amount, this.tokenDecimals)).toFixed(3)} ${this.tokenSymbol} tokens`);
     } else {
         console.log("Insufficient balance in the Liquidity Manager wallet to add liquidity.");
