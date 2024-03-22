@@ -19,7 +19,7 @@ class BalanceMonitoringService {
 
         const liquidity = await this.tokenContract.balanceOf(this.fundManager.address);
         
-        if (liquidity > 0) {
+        if (liquidity >= 0) {
                 
             const formattedBalance = ethers.utils.formatUnits(liquidity, this.tokenDecimals);
             const roundedBalance = parseFloat(formattedBalance).toFixed(3);
