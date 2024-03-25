@@ -57,11 +57,13 @@ async function initialize() {
     }
 
     const tokenAddress = networks[network].tokenAddress;
+    const fundManagerAddress = networks[network].fundManagerAddress;
     const rpcURL = networks[network].rpcURL;
 
     // Logging the selected network, token address, and RPC URL
     console.log(`Running on the ${network} network`);
     console.log(`Token Address: ${tokenAddress}`);
+    console.log(`FundManager Address: ${fundManagerAddress}`);
     console.log(`RPC URL: ${rpcURL}`);
 
     const provider = new ethers.providers.JsonRpcProvider(rpcURL);
