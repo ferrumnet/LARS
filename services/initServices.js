@@ -57,6 +57,7 @@ async function initialize() {
     }
 
     const tokenAddress = networks[network].tokenAddress;
+    const fundManagerAddress = networks[network].fundManagerAddress;
     const rpcURL = networks[network].rpcURL;
 
     // Logging the selected network, token address, and RPC URL
