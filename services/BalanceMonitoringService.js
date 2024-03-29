@@ -31,7 +31,7 @@ class BalanceMonitoringService {
 
                 const excessLiquidity = liquidityBN.sub(this.highThreshold);
                 console.log(`${this.tokenSymbol} Token balance exceeds high threshold (${HighThreshold}) by ${parseFloat(ethers.utils.formatUnits(excessLiquidity, this.tokenDecimals)).toFixed(3)}. Excess liquidity detected.\n`);
-                await this.balanceManagementService.removeExcessLiquidity(excessLiquidity);
+                await this.balanceManagementService.removeExcessLiquidity(excessLiquidity, 500000);
 
           } else if (liquidityBN.lt(this.lowThreshold)) {
 

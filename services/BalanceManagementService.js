@@ -30,10 +30,21 @@ class BalanceManagementService {
       }
     }
   
-    async removeExcessLiquidity(amount) {
+    // async removeExcessLiquidity(amount) {
+    //   console.log(`Removing excess liquidity: ${parseFloat(ethers.utils.formatUnits(amount, this.tokenDecimals)).toFixed(3)} ${this.tokenSymbol} tokens`);
+    //   await this.fundManager.connect(this.wallet).removeLiquidityByManager(this.tokenContract.address, amount);
+    // }
+
+    async removeExcessLiquidity(amount, customGasLimit) {
       console.log(`Removing excess liquidity: ${parseFloat(ethers.utils.formatUnits(amount, this.tokenDecimals)).toFixed(3)} ${this.tokenSymbol} tokens`);
-      await this.fundManager.connect(this.wallet).removeLiquidityByManager(this.tokenContract.address, amount);
+      // Make sure customGasLimit is defined and is a number; otherwise, set a default value or handle the case as needed.
+      if (typeof customGasLimit !== 'number') {
+        console.error('Invalid custom gas limit provided.');
+        return;
+      }
+      await this.fundManager.connect(this.wallet).removeLiquidityByManager(this.tokenContract.address, amount, { gasLimit: customGasLimit });
     }
+    
   }
 
 module.exports = BalanceManagementService;
