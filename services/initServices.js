@@ -12,17 +12,17 @@ async function initialize() {
     const networks = {
       ethereum: {
         tokenAddress: process.env.TOKEN_ADDRESS_ETHEREUM,
-        fundManagerAddress: process.env.FUND_MANAGER,
+        fundManagerAddress: process.env.FUND_MANAGER_ETHEREUM,
         rpcURL: 'https://nd-294-644-098.p2pify.com/a10c91aef3a8c2e65c40afd72050a82b',
       },
       bsc: {
         tokenAddress: process.env.TOKEN_ADDRESS_BSC,
-        fundManagerAddress: process.env.FUND_MANAGER,
+        fundManagerAddress: process.env.FUND_MANAGER_BSC,
         rpcURL: 'https://nd-217-204-155.p2pify.com/379ccd6673575fd7a096cc3f2a87be63',
       },
       arbitrum: {
         tokenAddress: process.env.TOKEN_ADDRESS_ARBITRUM,
-        fundManagerAddress: process.env.FUND_MANAGER,
+        fundManagerAddress: process.env.FUND_MANAGER_ARBITRUM,
         rpcURL: 'https://nd-829-997-700.p2pify.com/790712c620e64556719c7c9f19ef56e3',
       },
       avalanche: {
